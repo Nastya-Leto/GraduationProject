@@ -1,2 +1,8 @@
-package models;public class SearchProductModel {
+package models;
+
+import lombok.Data;
+
+@Data
+public class SearchProductModel {
+
 }

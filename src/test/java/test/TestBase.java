@@ -1,15 +1,16 @@
-package tests;
+package test;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import data.Section;
+import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.provider.Arguments;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import helpers.Attach;
+
 
 import java.util.List;
 import java.util.Map;
@@ -39,10 +40,6 @@ public class TestBase {
 
     void addListener() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-        Configuration.baseUrl = "https://kazanexpress.ru/";
-        Configuration.holdBrowserOpen = true;
-        Configuration.pageLoadStrategy = "eager";
-        Configuration.timeout = 100000;
     }
 
     @AfterEach
@@ -55,6 +52,7 @@ public class TestBase {
 
     @BeforeAll
     static void setUp() {
+        Configuration.baseUrl = "https://kazanexpress.ru/";
         Configuration.browser = "chrome";
         Configuration.browserVersion = "100.0";
         Configuration.browserSize = "1920x1080";
@@ -71,8 +69,4 @@ public class TestBase {
 
 
     }
-
-
-
-
 }
