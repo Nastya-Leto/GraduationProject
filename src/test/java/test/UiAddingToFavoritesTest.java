@@ -1,19 +1,26 @@
 package tests;
 
+import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 import pages.WorkWithProductPage;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Configuration.baseUrl;
-import static com.codeborne.selenide.Selenide.*;
+
 import static io.qameta.allure.Allure.step;
 
 public class UiAddingToFavoritesTest extends TestBase {
     WorkWithProductPage workWithProductPage = new WorkWithProductPage();
 
-    @DisplayName("Проверка добавления товара в избранное")
     @Test
+    @DisplayName("Проверка добавления товара в избранное")
+    @Tags({
+            @Tag("WEB"),
+            @Tag("Story")
+    })
+    @Owner("ZakharovaAA")
+
     void addingProductToTheCart() {
 
 
